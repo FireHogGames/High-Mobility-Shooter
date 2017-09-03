@@ -56,7 +56,7 @@ public class DCF_DemoScene_ManagerScript_CSharp : MonoBehaviour {
     }
 
     //Called by Button Pressed Methods. These use DatabaseControl namespace to communicate with server.
-    IEnumerator LoginUser ()
+    private IEnumerator LoginUser ()
     {
         IEnumerator e = DCF.Login(playerUsername, playerPassword); // << Send request to login, providing username and password
         while (e.MoveNext())

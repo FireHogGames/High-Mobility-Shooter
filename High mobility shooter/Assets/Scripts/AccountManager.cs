@@ -6,8 +6,10 @@ using UnityEngine;
 public class AccountManager : MonoBehaviour {
 
     private string username;
-    private string password;
     private AccountMenu menu;
+
+    [HideInInspector]
+    public bool isLoggedIn;
 
     public static AccountManager singleton;
 
@@ -65,10 +67,10 @@ public class AccountManager : MonoBehaviour {
                 //Username and Password were correct. Stop showing 'Loading...' and show the LoggedIn UI. And set the text to display the username.
                 menu.ResetAllUIElements();
                 username = playerUsername;
-                password = playerPassword;
                 menu.loadingParent.gameObject.SetActive(false);
                 menu.loggedInParent.gameObject.SetActive(true);
                 menu.usernameText.text = "Logged In As: " + username;
+                menu.spaceShip.SetActive(true);
             }
         }
         else
@@ -144,8 +146,8 @@ public class AccountManager : MonoBehaviour {
             menu.loadingParent.gameObject.SetActive(false);
             menu.loggedInParent.gameObject.SetActive(true);
             username = playerUsername;
-            password = playerPassword;
             menu.usernameText.text = "Logged In As: " + playerUsername;
+            menu.spaceShip.SetActive(true);
         }
         else
         {
@@ -172,9 +174,9 @@ public class AccountManager : MonoBehaviour {
     {
         menu.ResetAllUIElements();
         username = "";
-        password = "";
         menu.loginParent.gameObject.SetActive(true);
         menu.loggedInParent.gameObject.SetActive(false);
+        menu.spaceShip.SetActive(false);
     }
     #endregion
 }

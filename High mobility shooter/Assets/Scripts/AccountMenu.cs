@@ -22,15 +22,37 @@ public class AccountMenu : MonoBehaviour {
     [Header("Loading Screen")]
     public GameObject loadingParent;
 
-    [Header("Logged in screen")]
+    [Header("Home in screen")]
     public GameObject loggedInParent;
     public TMP_Text usernameText;
+    public GameObject spaceShip;
+
+    //update please
+    [Header("Quit pop up")]
+    public GameObject quitParent;
+
+    private void Start()
+    {
+        resetParents();
+    }
 
     public void ResetAllUIElements()
     {
         login_ErrorText.text = "";
         Login_usernameInput.text = "";
         login_passwordInput.text = "";
+        register_usernameInput.text = "";
+        register_passwordInput.text = "";
+        register_confirmPassword.text = "";
+    }
+
+    public void resetParents()
+    {
+        loginParent.SetActive(true);
+        registerParent.SetActive(false);
+        loadingParent.SetActive(false);
+        loggedInParent.SetActive(false);
+        spaceShip.SetActive(false);
     }
 
     public void Login()
@@ -58,5 +80,26 @@ public class AccountMenu : MonoBehaviour {
     {
         registerParent.SetActive(false);
         loginParent.SetActive(true);
+        ResetAllUIElements();
     }
+
+    public void Quit()
+    {
+        quitParent.SetActive(true);
+        Debug.Log("Requesting quit");
+    }
+
+    public void ConfirmQuit()
+    {
+        Application.Quit();
+        Debug.Log("Quitting game");
+    }
+
+    public void DeclineQuit()
+    {
+        quitParent.SetActive(false);
+        Debug.Log("Declined quiting");
+    }
+
+    
 }

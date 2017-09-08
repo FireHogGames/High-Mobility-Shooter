@@ -31,10 +31,13 @@ public class PlayerController : MonoBehaviour {
     {
         motor = GetComponent<PlayerMotor>();
         speed = runSpeed;
+        m_Capsule = GetComponent<CapsuleCollider>();
     }
 
     private void Update()
     {
+        GroundCheck();
+
         float _horizontal = Input.GetAxisRaw("Horizontal");
         float _vertical = Input.GetAxisRaw("Vertical");
 

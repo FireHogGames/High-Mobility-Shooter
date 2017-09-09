@@ -43,7 +43,7 @@ RenderSettings:
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 11
-  m_GIWorkflowMode: 0
+  m_GIWorkflowMode: 1
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -86,7 +86,8 @@ LightmapSettings:
     m_PVRFilteringAtrousColorSigma: 1
     m_PVRFilteringAtrousNormalSigma: 1
     m_PVRFilteringAtrousPositionSigma: 1
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000002, guid: 29a4cf0997707f24d9332c31781c476d,
+    type: 2}
   m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
@@ -155,7 +156,7 @@ Prefab:
     - target: {fileID: 114048736592124886, guid: 7271b26671fcc95459932e7c5268c4a9,
         type: 2}
       propertyPath: jumpSpeed
-      value: 7000
+      value: 11000
       objectReference: {fileID: 0}
     - target: {fileID: 4948757551350986, guid: 7271b26671fcc95459932e7c5268c4a9, type: 2}
       propertyPath: m_LocalPosition.x
@@ -180,6 +181,56 @@ Prefab:
     - target: {fileID: 4948757551350986, guid: 7271b26671fcc95459932e7c5268c4a9, type: 2}
       propertyPath: m_LocalRotation.z
       value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114815538505264862, guid: 7271b26671fcc95459932e7c5268c4a9,
+        type: 2}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 1492474105}
+    - target: {fileID: 114815538505264862, guid: 7271b26671fcc95459932e7c5268c4a9,
+        type: 2}
+      propertyPath: reloadTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 198823938444203022, guid: 7271b26671fcc95459932e7c5268c4a9,
+        type: 2}
+      propertyPath: LightsModule.color
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 198823938444203022, guid: 7271b26671fcc95459932e7c5268c4a9,
+        type: 2}
+      propertyPath: randomSeed
+      value: 2005076998
+      objectReference: {fileID: 0}
+    - target: {fileID: 198823938444203022, guid: 7271b26671fcc95459932e7c5268c4a9,
+        type: 2}
+      propertyPath: LightsModule.range
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198823938444203022, guid: 7271b26671fcc95459932e7c5268c4a9,
+        type: 2}
+      propertyPath: LightsModule.intensity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 198823938444203022, guid: 7271b26671fcc95459932e7c5268c4a9,
+        type: 2}
+      propertyPath: LightsModule.maxLights
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 108870149893399922, guid: 7271b26671fcc95459932e7c5268c4a9,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114048736592124886, guid: 7271b26671fcc95459932e7c5268c4a9,
+        type: 2}
+      propertyPath: advancedSettings.shellOffset
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114182488535858346, guid: 7271b26671fcc95459932e7c5268c4a9,
+        type: 2}
+      propertyPath: maxHealth
+      value: 200
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7271b26671fcc95459932e7c5268c4a9, type: 2}
@@ -214,7 +265,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 054996adb82598441849427b760cacb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 200
   respawnTime: 2
 --- !u!23 &150315420
 MeshRenderer:

@@ -19,12 +19,17 @@ public class AccountManager : MonoBehaviour {
     {
         singleton = this;
         DontDestroyOnLoad(this);
-        menu = FindObjectOfType<AccountMenu>();
+        
     }
 
     #endregion
 
     #region login
+
+    private void Update()
+    {
+        menu = FindObjectOfType<AccountMenu>();
+    }
     public void RequestLogin(string userName, string userPassword)
     {
         if (userName.Length >= 3f)

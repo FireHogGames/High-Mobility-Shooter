@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class AccountMenu : MonoBehaviour {
 
@@ -101,5 +102,8 @@ public class AccountMenu : MonoBehaviour {
         Debug.Log("Declined quiting");
     }
 
-    
+    public void LoadLevel()
+    {
+        SceneManager.LoadScene(2);
+    }
 }

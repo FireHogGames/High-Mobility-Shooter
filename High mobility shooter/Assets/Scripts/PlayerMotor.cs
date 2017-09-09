@@ -66,7 +66,8 @@ public class PlayerMotor : MonoBehaviour {
     {
         if (GetComponent<PlayerController>().isGrounded)
         {
-            body.AddForce(transform.up * jumpForce * Time.fixedDeltaTime);
+            jumpForce = jumpForce * Time.fixedDeltaTime;
+            body.AddForce(transform.up * jumpForce);
         }
     }
 

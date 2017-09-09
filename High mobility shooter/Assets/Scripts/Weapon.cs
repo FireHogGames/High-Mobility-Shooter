@@ -14,6 +14,7 @@ public class Weapon : MonoBehaviour {
     public float standardbullets = 10;
     public ParticleSystem muzzleFlash;
     public float reloadTime;
+    public Animator animator;
 
     private TMP_Text bulletText;
     private float bullets;
@@ -103,10 +104,16 @@ public class Weapon : MonoBehaviour {
     //reload
     private IEnumerator Reload()
     {
-        yield return new WaitForSeconds(reloadTime);
+        animator.SetBool("isReloading", true);
+
+        yield return new WaitForSeconds(reloadTime - .45f);
 
         SetAmmo();
-        canShoot = true;
+        animator.SetBool("isReloading", false);
         isReloading = false;
+
+        yield return new WaitForSeconds(.45f);
+
+        canShoot = true;
     }
 }

@@ -8,6 +8,11 @@ public class Home : MonoBehaviour {
     public GameObject news;
     public GameObject stats;
 
+    private void Start()
+    {
+        CloseTab();
+    }
+
     public void PlayOnline()
     {
         playOnline.SetActive(true);

@@ -2,6 +2,7 @@
 using System.Collections;
 using TMPro;
 
+[RequireComponent(typeof(Target))]
 public class Weapon : MonoBehaviour {
 
     //publics
@@ -89,7 +90,8 @@ public class Weapon : MonoBehaviour {
     {
         if(target != null)
         {
-            target.TakeDamage(_damage);
+            Target playerTarget = GetComponent<Target>();
+            target.TakeDamage(_damage, playerTarget);
         }
     }
 

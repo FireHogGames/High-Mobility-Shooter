@@ -158,6 +158,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4948757551350986}
+  - component: {fileID: 95679796932910916}
   m_Layer: 8
   m_Name: Rifle
   m_TagString: Untagged
@@ -180,6 +181,7 @@ GameObject:
   - component: {fileID: 114191029724878752}
   - component: {fileID: 114815538505264862}
   - component: {fileID: 114182488535858346}
+  - component: {fileID: 114180860853600500}
   m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
@@ -795,13 +797,30 @@ Behaviour:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1064254905978334}
   m_Enabled: 1
+--- !u!95 &95679796932910916
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1843073801789970}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a397b51a83f62bf4c83e1a6d116067f9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!108 &108870149893399922
 Light:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1931490197498920}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 8
   m_Type: 2
   m_Color: {r: 0, g: 0.5862067, b: 1, a: 1}
@@ -864,6 +883,19 @@ MonoBehaviour:
   advancedSettings:
     groundCheckDistance: 0.01
     shellOffset: 0
+--- !u!114 &114180860853600500
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1908201131026514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0036cc1e48cc714b82d3ee29eabdff2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GUI: {fileID: 1493768430564798, guid: 53a1279e023f53f45b82d5f8a773ec50, type: 2}
+  ui: {fileID: 0}
 --- !u!114 &114182488535858346
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -875,7 +907,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 054996adb82598441849427b760cacb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  body: {fileID: 23840096782086772}
+  maxHealth: 200
   respawnTime: 2
 --- !u!114 &114191029724878752
 MonoBehaviour:
@@ -923,8 +956,8 @@ MonoBehaviour:
   playerCamera: {fileID: 20970715194016544}
   standardbullets: 30
   muzzleFlash: {fileID: 198823938444203022}
-  reloadTime: 2
-  bulletText: {fileID: 0}
+  reloadTime: 1
+  animator: {fileID: 95679796932910916}
 --- !u!114 &114895773546066512
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3459,9 +3492,9 @@ ParticleSystem:
     ratio: 0.1
     light: {fileID: 108870149893399922}
     randomDistribution: 1
-    color: 0
+    color: 1
     range: 0
-    intensity: 0
+    intensity: 1
     rangeCurve:
       serializedVersion: 2
       minMaxState: 0
@@ -3544,7 +3577,7 @@ ParticleSystem:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
-    maxLights: 20
+    maxLights: 10
   TrailModule:
     enabled: 0
     ratio: 1
